@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS `users` (
+  `identifier` varchar(60) NOT NULL,
+  `accounts` longtext DEFAULT NULL,
+  `job` varchar(20) DEFAULT 'unemployed',
+  `job_grade` int(11) DEFAULT 0,
+  PRIMARY KEY (`identifier`)
+);
+
+CREATE TABLE IF NOT EXISTS `jobs` (
+  `name` varchar(50) NOT NULL,
+  `label` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+);
+
+INSERT INTO `jobs` (`name`, `label`) VALUES
+('unemployed', 'Sans emploi');
+
+CREATE TABLE IF NOT EXISTS `addon_account` (
+  `name` varchar(60) NOT NULL,
+  `label` varchar(100) NOT NULL,
+  `shared` int(11) NOT NULL,
+  PRIMARY KEY (`name`)
+);
